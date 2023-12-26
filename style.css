@@ -1,8 +1,19 @@
 body {
     margin: 0px;
+    background-color: white;
+    color: black;
 }
 
-header ul {
+.darkModeButton{
+    background-image: url(lightmode.png);
+    background-size: 60px;
+    background-position: 0%;
+    background-repeat: no-repeat;
+    width: 30px;
+    padding: ;
+}
+
+.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,25 +22,43 @@ header ul {
     top: 0;
     left: 0;
     right: 0;
+    height: 46px;
 }
 
-header ul li {
+.navbar li {
     float: left;
 }
   
-header li a {
+.navbar li a {
     display: block;
-    color: #666;
+    color: #3b3b3b;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
   
-header li a:hover:not(.active) {
+.navbar li a:hover:not(.active) {
     background-color: #ddd;
 }
-  
-header li a.active {
+
+.dark-mode {
+    background-color: rgb(27, 27, 27);
     color: white;
-    background-color: #04AA6D;
+}
+
+.dark-mode .navbar {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+.dark-mode .navbar li a {
+    color: white;
+}
+
+.dark-mode .navbar li a:hover:not(.active) {
+    background-color: #3b3b3b;
+}
+
+.dark-mode .darkModeButton {
+    background-image: url(darkmode.png);
 }
