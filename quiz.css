@@ -1,0 +1,43 @@
+.navbar li {
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+  
+.navbar li a {
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 20%;
+}
+  
+.navbar li a:hover{
+    background-color: red;
+    color: black;
+    border-radius: 2;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    text-align: center;
+}
+
+.correct{
+    background-color: green;
+    color: white;
+}
+
+.incorrect{
+    background-color: red;
+    color: white;
+}
+
+.score{
+    background-color: gold;
+    color: chartreuse;
+    font-size: 30px;
+}

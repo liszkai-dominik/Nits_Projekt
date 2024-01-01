@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+  <header>
+    <ul class="navbar">
+        <li><a href="index.html" class="active">Játék</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+</header>
+
+<div id="quiz-container">
+  <h1>Nits Quiz</h1>
+  <div id="question"></div>
+  <div id="options"></div>
+  <button onclick="checkAnswer()" id="button">Következő kérdés</button>
+  <p id="result"></p>
+  <p id="score"></p>
+</div>
+
+<script>
+let active = document.querySelector('.active');
+active.style.textDecoration = "none";
+let navbar = document.querySelector('.navbar');
+navbar.style.listStyleType = "none";
+navbar.style.overflow = "hidden";
+navbar.style.fontSize = "20px";
+navbar.style.backgroundColor = "ghostwhite";
+navbar.style.height = "46px";
+navbar.style.width = "450px";
+document.getElementById('button').style.marginLeft = "940px";
+const questions = [
+  {
+    question: "Nits szerint mit kell inni minden reggel ahhoz, hogy jól teljesíts?",
+    options: ["vizet", "tejet", "répalevet", "vodkát"],
+    correctAnswerIndex: 2
+  },
+  {
+    question: "Nits szerint ki képes bármire?",
+    options: ["Elon Musk", "Chuck Norris", "Andrew Tate", "Putyin"],
+    correctAnswerIndex: 1
+  },
+  {
+    question: "Milyen zöldségből lehet függvényt csinálni?",
+    options: ["tökből", "hagymából", "répából", "salátából"],
+    correctAnswerIndex: 3
+  },
+  {
+    question: "Kinek ad Nits egyest?",
+    options: ["Aki másol", "Aki hagyta hogy másoljanak róla", "Egyikse", "Mindkettő"],
+    correctAnswerIndex: 3
+  },
+  {
+    question: "Mit mond Nits amikor bejön a terembe?",
+    options: ["Kérek egy hetest!", "Jóreggelt kívánok", "Sziasztok gyerekek", "Hogy vagytok?"],
+    correctAnswerIndex: 0
+  }
+];
+
+let currentQuestionIndex = 0;
+
+function displayQuestion() {
+  const questionElement = document.getElementById("question");
+  questionElement.style.textAlign = "center";
+  questionElement.style.fontSize = "40px";
+  questionElement.style.fontWeight = "bold";
+  const optionsElement = document.getElementById("options");
+  optionsElement.style.textAlign = "center";
+  optionsElement.style.fontSize = "25px";
+  const question = questions[currentQuestionIndex];
+
+  questionElement.textContent = question.question;
+  optionsElement.innerHTML = "";
+
+  for (let i = 0; i < question.options.length; i++) {
+    const button = document.createElement("button");
+    button.textContent = question.options[i];
+    button.onclick = function() {
+      checkAnswer(i);
+    };
+    optionsElement.appendChild(button);
+  }
+}
+score = 0;
+function checkAnswer(selectedIndex) {
+  const question = questions[currentQuestionIndex];
+  const resultElement = document.getElementById("result");
+  resultElement.style.textAlign = "center";
+  resultElement.style.marginLeft = "600px";
+  resultElement.style.marginRight = "580px";
+  resultElement.style.color = "black";
+
+  if (selectedIndex === question.correctAnswerIndex) {
+    resultElement.textContent = "Helyes válasz!";
+    resultElement.classList.add("correct");
+    resultElement.classList.remove("incorrect");
+    score ++;
+
+  } else {
+    resultElement.textContent = "Sajnálom, rossz válasz. A helyes válasz: " + question.options[question.correctAnswerIndex];
+    resultElement.classList.remove("correct");
+    resultElement.classList.add("incorrect");
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    displayQuestion();
+  } else {
+    document.getElementById("question").innerHTML = "";
+    document.getElementById("options").innerHTML = "";
+    document.querySelector("button").style.display = "none";
+    resultElement.classList.remove("correct");
+    resultElement.classList.remove("incorrect");
+    resultElement.classList.add("score");
+    resultElement.textContent = (("Kvíz vége! ")+("A pontszámod: ")+score);
+    score2 = document.querySelector('#score');
+    score2 = document.querySelector('#score');
+    if (score == 4 ||score == 5){
+        score2.textContent = ("Gratulálok! Nagyon jó megfigyelő vagy!");
+        score2.style.textAlign = "center";
+        score2.style.fontSize = "25px";
+        score2.style.backgroundColor = "green";
+        score2.style.width = "400px";
+        score2.style.position = "absolute";
+        score2.style.left = "625px";
+    }
+    }
+}
+
+displayQuestion()
+</script>
+</body>
+</html>

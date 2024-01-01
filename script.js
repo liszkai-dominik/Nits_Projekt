@@ -26,6 +26,17 @@ let windowHeight = 255;
 let isGameOver = false;
 let score = 0;
 
+let active = document.querySelector('.active');
+active.style.textDecoration = "none";
+
+let navbar = document.querySelector('.navbar');
+navbar.style.listStyleType = "none";
+navbar.style.overflow = "hidden";
+navbar.style.fontSize = "20px";
+navbar.style.backgroundColor = "ghostwhite";
+navbar.style.height = "46px";
+navbar.style.width = "450px";
+
 document.getElementById('game-screen').style.display = 'none';
 startscreen = document.getElementById('start-screen');
 startscreen.style.display = 'block';
@@ -39,7 +50,6 @@ showSaladImage();
 });
 startscreen.height = '825px';
 startscreen.width = '100%';
-startscreen.style.backgroundColor = 'antiquewhite';
 gomb = document.getElementById('start-button');
 gomb.style.left = '780px';
 gomb.style.position = 'absolute';
@@ -199,4 +209,4 @@ palya.appendChild(gameOverScreen);
 
 function restartGame() {
 window.location.reload()
-}  
+}
