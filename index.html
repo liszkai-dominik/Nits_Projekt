@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Nits Game</title>
     <link rel="stylesheet" href="style.css">
-
-    <script src="script.js" defer></script>
-
 </head>
 <body>
     <header>
         <ul class="navbar">
-            <li><a href="">kép</a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li style="float:right"><a onclick="darkMode()" class="darkModeButton">‎</a></li>
+            <li><a href="index.html">Játék</a></li>
+            <li id="li2"><a href="quiz.html">Quiz</a></li>
         </ul>
     </header>
+    <div id="start-screen">
+        <h1>Nits Game</h1>
+        <button id="start-button">Indítás</button>
+    </div>
+    <div id="game-screen" style="display: none;">
+        <div id="palya">
+            <p id="result"><span id="score"></span></p>
+                <div id="ut">
+                        <div id="imageContainer">
+                            <img id="saladImage" src="">
+                        </div>
+                        <div id="imageContainer2">
+                            <img id="signImage" src="">
+                        </div>
+                    <div id="nits">
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

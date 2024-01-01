@@ -1,64 +1,58 @@
-body {
-    margin: 0px;
-    background-color: white;
-    color: black;
-}
-
-.darkModeButton{
-    background-image: url(lightmode.png);
-    background-size: 60px;
-    background-position: 0%;
-    background-repeat: no-repeat;
-    width: 30px;
-    padding: ;
-}
-
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #f3f3f3;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 46px;
-}
-
-.navbar li {
-    float: left;
-}
+body{
+    background-color: antiquewhite;
+  }
   
-.navbar li a {
+  .navbar {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: cornsilk;
+    height: 46px;
+  }
+  
+  .navbar li {
+    float: left;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .navbar li a {
     display: block;
-    color: #3b3b3b;
+    color: red;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
+    border-radius: 20%;
+  }
   
-.navbar li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.dark-mode {
-    background-color: rgb(27, 27, 27);
-    color: white;
-}
-
-.dark-mode .navbar {
-    background-color: rgb(20, 20, 20);
-    color: white;
-}
-
-.dark-mode .navbar li a {
-    color: white;
-}
-
-.dark-mode .navbar li a:hover:not(.active) {
-    background-color: #3b3b3b;
-}
-
-.dark-mode .darkModeButton {
-    background-image: url(darkmode.png);
-}
+  .navbar li a:hover{
+    background-color: red;
+    color: black;
+    border-radius: 2;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  #palya{
+      animation: back 7s infinite; 
+      animation-timing-function: linear; } 
+      @keyframes back { 100%{ background-position: -3067px 0; }
+  }
+  
+  #nits{
+      animation: 10000ms ease-in-out infinite color-change;
+  }
+  
+  @keyframes color-change {
+      0% {
+        background-color: red;
+      }
+      33% {
+        background-color: white;
+      }
+      66% {
+        background-color: green;
+      }
+    }
+  
